@@ -19,7 +19,7 @@ import argparse
 import os 
 from sklearn.neighbors import NearestCentroid
 parser = argparse.ArgumentParser()
-parser.add_argument("--file", type=csv)
+parser.add_argument("--file")
 parser.add_argument("--expName",type = str, default = "alignmentOut")
 parser.add_argument("--expPath",type = str, default = "~/results")
 parser.add_argument("--frameNumber", type = int, default = 400)
@@ -121,6 +121,7 @@ def outlierDetection(df):
   yhat = lof.fit_predict(data)
   return yhat
 
+## NEED TO EDIT 
 def allClusterOutliers(frame,numClust):
   final = []
   for i in range(numClust):
@@ -128,7 +129,7 @@ def allClusterOutliers(frame,numClust):
     outliers = outlierDetection(data)
     data['outliers'] = outliers
     final.append(data)
-  return assignColors(pd.concat(final))
+  return pd.concat(final)
 def calcCentroid(df):
     out = []
     for i in range(opt.nClusters):
@@ -178,5 +179,3 @@ bplt.figure.savefig(expPath + '/boxplot.png')
 #df of centroids based on clusters
 centroids = calcCentroid(outlierFree)
 centroids.to_csv(expPath + '/centroids.csv')
-
-
