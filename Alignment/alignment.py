@@ -21,7 +21,7 @@ from sklearn.neighbors import NearestCentroid
 parser = argparse.ArgumentParser()
 parser.add_argument("--file")
 parser.add_argument("--expName",type = str, default = "alignmentOut")
-parser.add_argument("--expPath",type = str, default = "~/results")
+parser.add_argument("--expPath",type = str)
 parser.add_argument("--frameNumber", type = int, default = 400)
 parser.add_argument("--nClusters",type = int, default = 4)
 opt = parser.parse_args()
