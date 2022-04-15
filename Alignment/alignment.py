@@ -30,7 +30,8 @@ FILE = opt.file
 data = pd.read_csv(FILE)
 
 #Make output directory location if needed
-if not os.path.exists(expPath):
+exists = os.path.exists(expPath)
+if not exists:
   os.mkdir(expPath)
 
 ##METHODS##
