@@ -29,6 +29,10 @@ expPath = opt.expPath + '/' + opt.expName
 FILE = opt.file
 data = pd.read_csv(FILE)
 
+#Make output directory location if needed
+if not os.path.exists(expPath):
+  os.mkdir(expPath)
+
 ##METHODS##
 def preprocessFrames(data):
   frames = []
