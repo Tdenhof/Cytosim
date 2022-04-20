@@ -172,15 +172,9 @@ outlierFree = frame[frame.outliers != -1]
 # OUTPUTS
 #Outlier Free Data 
 outlierFree.to_csv(expPath + '/outlierFree.csv')
-#png -- Graph 
-hist1 = outlierFree.phi.plot.hist(bins = 10)
-hist1.figure.savefig(expPath + '/histogram.png')
 #values -- IQR
 q3, q1 = np.percentile(outlierFree.phi, [75, 25])
 pd.DataFrame([[q1,q3,q3-q1]],columns = ['q1','q3','IQR']).to_csv(expPath + '/IQRPhiVals.csv')
-#Boxplot -- IQR
-bplt = outlierFree.boxplot(column = "phi")
-bplt.figure.savefig(expPath + '/boxplot.png')
 #df of centroids based on clusters
 centroids = calcCentroid(outlierFree)
 centroids.to_csv(expPath + '/centroids.csv')
