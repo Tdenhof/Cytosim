@@ -1,3 +1,3 @@
-# Background into YOLOv5 ... Computer Vision... 
-Next Steps... 
-Consolodate into a py package
+# Machine Learning Applications
+For future use, this model can be used to identify timing, location, frequency, number of holes, and size of holes in a Cytosim Simulation
+See Cytosim_MachineLearning notebook for example use
